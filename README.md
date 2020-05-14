@@ -1,6 +1,6 @@
 # bs-getenv
 
-![bs-getenv pipeline](https://github.com/anler/bs-getenv/workflows/bs-getenv%20pipeline/badge.svg) [![npm version](https://img.shields.io/npm/v/bs-getenv.svg)](https://www.npmjs.com/package/bs-getenv) [![license](https://img.shields.io/npm/l/bs-getenv.svg)](https://www.npmjs.com/package/bs-getenv)
+![bs-getenv pipeline](https://github.com/anler/bs-getenv/workflows/bs-getenv%20pipeline/badge.svg) [![npm version](https://img.shields.io/npm/v/bs-getenv.svg)](https://www.npmjs.com/package/bs-getenv)
 
 PPX for [ReasonML](https://reasonml.github.io) / [BuckleScript](https://bucklescript.github.io) for embedding
 environment variables in the code.
