@@ -1,0 +1,6 @@
+(library
+  (name GetenvPpx)
+  (public_name bs-getenv-ppx.lib)
+  (libraries reason ocaml-migrate-parsetree)
+  (kind ppx_rewriter)
+)

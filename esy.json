@@ -1,0 +1,26 @@
+{
+  "name": "bs-getenv-ppx",
+  "version": "0.1.0",
+  "description": "ReasonML/BuckleScript PPX for embedding env variables",
+  "author": "Anler Hernández <inbox.anler@gmail.com>",
+  "license": "MIT",
+  "esy": {
+    "build": "dune build -p #{self.name}",
+    "buildsInSource": "_build"
+  },
+  "dependencies": {
+    "@esy-ocaml/reason": "*",
+    "@opam/dune": "*",
+    "@opam/ocaml-migrate-parsetree": "*",
+    "ocaml": "~4.6.1000",
+    "refmterr": "*"
+  },
+  "resolutions": {
+    "@esy-ocaml/esy-installer": "0.0.1",
+    "@opam/menhir": "20171013",
+    "@opam/re": "1.8.0"
+  },
+  "devDependencies": {
+    "@opam/merlin": "*"
+  }
+}

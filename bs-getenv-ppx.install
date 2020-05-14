@@ -1,0 +1,22 @@
+lib: [
+  "_build/install/default/lib/bs-getenv-ppx/META"
+  "_build/install/default/lib/bs-getenv-ppx/dune-package"
+  "_build/install/default/lib/bs-getenv-ppx/lib/GetenvPpx.a" {"lib/GetenvPpx.a"}
+  "_build/install/default/lib/bs-getenv-ppx/lib/GetenvPpx.cma" {"lib/GetenvPpx.cma"}
+  "_build/install/default/lib/bs-getenv-ppx/lib/GetenvPpx.cmi" {"lib/GetenvPpx.cmi"}
+  "_build/install/default/lib/bs-getenv-ppx/lib/GetenvPpx.cmt" {"lib/GetenvPpx.cmt"}
+  "_build/install/default/lib/bs-getenv-ppx/lib/GetenvPpx.cmx" {"lib/GetenvPpx.cmx"}
+  "_build/install/default/lib/bs-getenv-ppx/lib/GetenvPpx.cmxa" {"lib/GetenvPpx.cmxa"}
+  "_build/install/default/lib/bs-getenv-ppx/lib/GetenvPpx.cmxs" {"lib/GetenvPpx.cmxs"}
+  "_build/install/default/lib/bs-getenv-ppx/lib/GetenvPpx.re" {"lib/GetenvPpx.re"}
+  "_build/install/default/lib/bs-getenv-ppx/opam"
+]
+libexec: [
+  "_build/install/default/lib/bs-getenv-ppx/lib/ppx.exe" {"lib/ppx.exe"}
+]
+bin: [
+  "_build/install/default/bin/bs-getenv-ppx"
+]
+doc: [
+  "_build/install/default/doc/bs-getenv-ppx/README.md"
+]

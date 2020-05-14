@@ -1,0 +1,6 @@
+(executable
+  (name bin)
+  (public_name bs-getenv-ppx)
+  (libraries bs-getenv-ppx.lib)
+  (ocamlopt_flags ( -linkall ))
+)
