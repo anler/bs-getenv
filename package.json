@@ -1,6 +1,6 @@
 {
   "name": "bs-getenv",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "ReasonML/BuckleScript PPX for embedding env variables",
   "author": "Anler Hernandez <inbox.anler@gmail.com>",
   "license": "MIT",

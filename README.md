@@ -25,31 +25,74 @@ Then add it to `bsconfig.json`:
 
 ## Usage
 
-There are two patterns:
+### `%getenv ...`
 
-### With a default value
+#### With a default value
 
-Usage: `[%getenv "VAR_NAME"; defaultValue]`, where:
+Usage: `[%getenv VAR_NAME; defaultValue]`, where:
 
 - The result type will be `string`
 - `defaultValue` can be any expression of type `string`
 
-### Without a default value
+#### Without a default value
 
-Usage: `[%getenv "VAR_NAME"]`, where:
+Usage: `[%getenv VAR_NAME]`, where:
 
 - The result type will be `option(string)`.
+
+### `switch%getenv ...`
+
+#### With a default value (exhaustive pattern matching)
+
+Usage:
+
+```reason
+switch%getenv (VAR_NAME) {
+| "<some value>" => ...
+| _ => ...default
+}
+```
+
+where:
+
+- The result type will be the type of the cases
+
+#### Without a default value (non-exhaustive pattern matching)
+
+Usage:
+
+```reason
+switch%getenv (VAR_NAME) {
+| "<some value>" => ...
+}
+```
+
+where:
+
+- The result type will be `option(t)` where `t` is the type of the cases
 
 ## Example
 ```reason
 let getDefaultValue = () => "Some other value";
-let var1: string = [%getenv "SOME_VAR_THAT_DOESNT_EXIST"; getDefaultValue()];
 
-let var2: string = [%getenv "USER"; "default value"];
+let var1: string = [%getenv SOME_VAR_THAT_DOESNT_EXIST; getDefaultValue()];
 
-let var3: option(string) = [%getenv "HOME"];
+let var2: string = [%getenv USER; "default value"];
 
-let var4: option(string) = [%getenv "SOME_VAR_THAT_DOESNT_EXIST"];
+let var3: option(string) = [%getenv HOME];
+
+let var4: option(string) = [%getenv SOME_VAR_THAT_DOESNT_EXIST];
+
+let var5: bool =
+  switch%getenv (USER) {
+  | "anler" => true
+  | _ => false
+  };
+
+let var6: option(bool) =
+  switch%getenv (USER) {
+  | "anler" => true
+  };
 ```
 
 ## Developing
@@ -68,3 +111,10 @@ esy build
 ```
 
 To explore generated output, run `yarn build` and look the compiled file `test/Test.bs.js`.
+
+## TODO
+
+- [X] Just get env variables
+- [X] Support switch cases
+- [X] Better error reporting
+- [ ] Support switch guards and variables
