@@ -21,7 +21,7 @@ let resultMapper = (config, cookies) => {
               {
                 pstr_desc:
                   Pstr_eval(
-                    {pexp_desc: Pexp_constant(Pconst_string(name, None))},
+                    {pexp_desc: Pexp_construct({txt: Lident(name)}, _)},
                     _,
                   ),
               },
@@ -40,7 +40,7 @@ let resultMapper = (config, cookies) => {
               {
                 pstr_desc:
                   Pstr_eval(
-                    {pexp_desc: Pexp_constant(Pconst_string(name, None))},
+                    {pexp_desc: Pexp_construct({txt: Lident(name)}, _)},
                     _,
                   ),
               },
