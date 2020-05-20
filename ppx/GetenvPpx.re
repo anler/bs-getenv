@@ -53,6 +53,35 @@ let resultMapper = (config, cookies) => {
     | {
         pexp_desc:
           Pexp_extension((
+            {txt: "getenv.exn"},
+            PStr([
+              {
+                pstr_desc:
+                  Pstr_eval(
+                    {
+                      pexp_loc: loc,
+                      pexp_desc: Pexp_construct({txt: Lident(name)}, _),
+                    },
+                    _,
+                  ),
+              },
+            ]),
+          )),
+      } =>
+      try(getEnv(name)) {
+      | Not_found =>
+        raise(
+          Location.Error(
+            Location.error(
+              ~loc,
+              "%getenv environment variable not found: " ++ name,
+            ),
+          ),
+        )
+      }
+    | {
+        pexp_desc:
+          Pexp_extension((
             {txt: "getenv"},
             PStr([
               {

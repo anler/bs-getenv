@@ -3,6 +3,7 @@ lib/
 dist/
 .cache
 .merlin
+.cmt
 .bsb.lock
 *.bs.js
 .DS_Store

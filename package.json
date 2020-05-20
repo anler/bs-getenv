@@ -1,6 +1,6 @@
 {
   "name": "bs-getenv",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "description": "ReasonML/BuckleScript PPX for embedding env variables",
   "author": "Anler Hernandez <inbox.anler@gmail.com>",
   "license": "MIT",
@@ -11,7 +11,7 @@
   "scripts": {
     "start": "bsb -clean-world -make-world -w",
     "build": "bsb -clean-world -make-world",
-    "test": "exit 0"
+    "test": "sh ./test/runtests.sh"
   },
   "files": [
     "bin",

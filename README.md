@@ -8,6 +8,7 @@ environment variables in the code.
 ![bs-getenv](./.assets/example.png)
 
 ## Installation
+
 Get the package:
 
 ```shell
@@ -39,6 +40,14 @@ Usage: `[%getenv VAR_NAME; defaultValue]`, where:
 Usage: `[%getenv VAR_NAME]`, where:
 
 - The result type will be `option(string)`.
+
+### `%getenv.exn ...`
+
+Usage: `[%getenv.exn VAR_NAME]`, where:
+
+- The result type will be `string`
+- Useful in those cases where the application absolutely needs an env variable to exist (e.g.: app secrets)
+- If `VAR_NAME` env var does not exist, it will fail **at compile time** with the message: `%getenv environment variable not found: VAR_NAME`
 
 ### `switch%getenv ...`
 
@@ -72,6 +81,7 @@ where:
 - The result type will be `option(t)` where `t` is the type of the cases
 
 ## Example
+
 ```reason
 let getDefaultValue = () => "Some other value";
 
@@ -114,7 +124,7 @@ To explore generated output, run `yarn build` and look the compiled file `test/T
 
 ## TODO
 
-- [X] Just get env variables
-- [X] Support switch cases
-- [X] Better error reporting
+- [x] Just get env variables
+- [x] Support switch cases
+- [x] Better error reporting
 - [ ] Support switch guards and variables
