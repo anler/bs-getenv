@@ -20,11 +20,15 @@ let rec checkCases =
   | [_, ...rest] => checkCases(rest)
   | [] => ();
 
-let matches = value =>
+let rec matchesValue = value =>
   fun
-  | {pc_lhs: {ppat_desc: Ppat_constant(Pconst_string(otherValue, None))}} =>
-    value == otherValue
+  | {ppat_desc: Ppat_constant(Pconst_string(constValue, None))} =>
+    constValue == value
+  | {ppat_desc: Ppat_or(left, right)} =>
+    matchesValue(value, left) || matchesValue(value, right)
   | _ => false;
+
+let matches = (value, {pc_lhs: expr}) => matchesValue(value, expr);
 
 let getMatchExp = case_ => case_.pc_rhs;
 

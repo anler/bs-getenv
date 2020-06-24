@@ -18,5 +18,6 @@ bin: [
   "_build/install/default/bin/bs-getenv-ppx"
 ]
 doc: [
+  "_build/install/default/doc/bs-getenv-ppx/LICENSE"
   "_build/install/default/doc/bs-getenv-ppx/README.md"
 ]
